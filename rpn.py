@@ -19,9 +19,11 @@ def calculate(arg):
             operations.append(operand)
         except ValueError:
             #Encountered a non-numeric
+            function = operators[operand]
             a2 = operations.pop()
             a1 = operations.pop()
-            operations.append( operators[operand] (a1,a2) )
+            result = function(a1, a2)
+            operations.append( result )
     print(operations)
     return operations.pop()
 

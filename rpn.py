@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 
 import operator
+import logging
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.DEBUG)
 
 operators = {
         #This is a dictionary!
         '+': lambda x, y : x + y,
-        '-': operator.sub,
-        '*': operator.mul,
-        '/': operator.truediv
+        '-': lambda x, y : x - y,
+        '*': lambda x, y : x * y,
+        '/': lambda x, y : x / y,
+        #'%': lambda x, y : (x+
 }
 
 def calculate(arg):
@@ -24,7 +29,7 @@ def calculate(arg):
             a1 = operations.pop()
             result = function(a1, a2)
             operations.append( result )
-    #print(operations)
+    logger.debug(operations)
     if len(operations) != 1:
         raise TypeError
 

@@ -22,6 +22,7 @@ def calculate(arg):
             a2 = operations.pop()
             a1 = operations.pop()
             operations.append( operators[operand] (a1,a2) )
+    print(operations)
     return operations.pop()
 
 def main():

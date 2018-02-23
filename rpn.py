@@ -4,7 +4,7 @@ import operator
 
 operators = {
         #This is a dictionary!
-        '+': operator.add,
+        '+': lambda x, y : x + y,
         '-': operator.sub,
         '*': operator.mul,
         '/': operator.truediv
@@ -24,7 +24,7 @@ def calculate(arg):
             a1 = operations.pop()
             result = function(a1, a2)
             operations.append( result )
-    print(operations)
+    #print(operations)
     if len(operations) != 1:
         raise TypeError
 

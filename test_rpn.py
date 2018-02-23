@@ -19,4 +19,5 @@ class TestBasics(unittest.TestCase):
         self.assertEqual(1.4,result)
     def test_toomany(self):
         with self.assertRaises(TypeError):
+            #This enables you to give expected error outputs
             result = rpn.calculate('1 2 3 +')

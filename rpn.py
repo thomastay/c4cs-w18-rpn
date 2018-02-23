@@ -25,6 +25,10 @@ def calculate(arg):
             result = function(a1, a2)
             operations.append( result )
     print(operations)
+    if len(operations) != 1:
+        raise TypeError
+
+
     return operations.pop()
 
 def main():

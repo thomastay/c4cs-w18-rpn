@@ -17,10 +17,6 @@ class TestBasics(unittest.TestCase):
     def test_divide(self):
         result = rpn.calculate("7 5 /")
         self.assertEqual(1.4,result)
-    def test_toomany(self):
-        with self.assertRaises(TypeError):
-            #This enables you to give expected error outputs
-            result = rpn.calculate('1 2 3 +')
     def test_add_subtract(self):
         result = rpn.calculate("1 2 + 5 -")
         self.assertEqual(-2, result)
@@ -42,6 +38,14 @@ class TestBasics(unittest.TestCase):
     def test_int_div_negative(self):
         result = rpn.calculate("-20 6 .")
         self.assertEqual(-4, result)
+    def test_summation_operator(self):
+        result = rpn.calculate("1 2 3 4 sum")
+        self.assertEqual(10, result)
+    def test_factorial_operator(self):
+        result = rpn.calculate("7 !")
+        self.assertEqual(5040, result)
+    def test_factorial(self):
+        self.assertEqual(120,rpn.factorial(5))
 
 
 

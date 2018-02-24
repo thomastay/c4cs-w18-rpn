@@ -44,6 +44,8 @@ class TestBasics(unittest.TestCase):
     def test_factorial_operator(self):
         result = rpn.calculate("7 !")
         self.assertEqual(5040, result)
+    def test_factorial_negative(self)
+        
     def test_factorial(self):
         self.assertEqual(120,rpn.factorial(5))
 

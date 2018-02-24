@@ -2,6 +2,7 @@
 
 import operator
 import logging
+from math import pow
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG)
@@ -12,7 +13,9 @@ operators = {
         '-': lambda x, y : x - y,
         '*': lambda x, y : x * y,
         '/': lambda x, y : x / y,
-        #'%': lambda x, y : (x+
+        '%': lambda x, y : (x * y / 100),
+        '^': lambda x, y : pow(x,y),
+        '.': lambda x, y : x //y,
 }
 
 def calculate(arg):
@@ -28,8 +31,13 @@ def calculate(arg):
             a2 = operations.pop()
             a1 = operations.pop()
             result = function(a1, a2)
+
+            if operand == '%':
+                #The only special operation
+                operations.append(a1)
+
             operations.append( result )
-    logger.debug(operations)
+    logging.debug(operations)
     if len(operations) != 1:
         raise TypeError
 

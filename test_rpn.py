@@ -49,6 +49,9 @@ class TestBasics(unittest.TestCase):
             result = rpn.calculate("-5 !")
     def test_factorial(self):
         self.assertEqual(120,rpn.factorial(5))
+    def test_sin(self):
+        self.assertAlmostEqual(0.909297, rpn.sin(2))
+
 
 
 

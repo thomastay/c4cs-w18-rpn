@@ -50,7 +50,7 @@ class TestBasics(unittest.TestCase):
     def test_factorial(self):
         self.assertEqual(120,rpn.factorial(5))
     def test_sin(self):
-        self.assertAlmostEqual(0.909297, rpn.sin(2))
+        self.assertAlmostEqual(0.9092974268, rpn.calculate('2 sin'))
 
 
 

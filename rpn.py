@@ -3,6 +3,7 @@
 import operator
 import logging
 from math import pow
+from math import sin
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG)
@@ -19,7 +20,8 @@ binary_operators = {
 }
 
 unary_operators = {
-        '!': lambda x: factorial(x)
+        '!': lambda x: factorial(x),
+        'sin': lambda x: sin(x),
         }
 
 def factorial(x):
